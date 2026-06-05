@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.profile-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.profile-card{
+    width:420px;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.profile-card:hover{
+    transform:translateY(-8px);
+}
+
+.card-banner{
+    height:130px;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+.profile-avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#fff;
+    border:5px solid #fff;
+    margin:-60px auto 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    font-weight:700;
+    color:#2563eb;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.profile-header{
+    text-align:center;
+    padding:15px 20px;
+}
+
+.profile-header h1{
+    color:#111827;
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.profile-header p{
+    color:#6b7280;
+}
+
+.profile-info{
+    padding:20px;
+}
+
+.info-item{
+    background:#f8fafc;
+    border-left:4px solid #2563eb;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:12px;
+}
+
+.info-item span{
+    color:#64748b;
+    font-size:13px;
+    display:block;
+    margin-bottom:5px;
+}
+
+.info-item h4{
+    color:#0f172a;
+    font-size:16px;
+    font-weight:600;
+}
+
+.profile-actions{
+    display:flex;
+    gap:10px;
+    padding:20px;
+}
+
+.back-btn,
+.edit-btn{
+    flex:1;
+    text-decoration:none;
+    text-align:center;
+    padding:14px;
+    border-radius:12px;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-btn{
+    background:#64748b;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.edit-btn{
+    background:#10b981;
+}
+
+.edit-btn:hover{
+    background:#059669;
+}

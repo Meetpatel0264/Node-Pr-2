@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <form action="/update/<%= student.id %>" method="POST">
+
+        <h2>Edit Student</h2>
+
+        <input
+            type="text"
+            name="name"
+            value="<%= student.name %>"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            value="<%= student.email %>"
+            placeholder="Email"
+            required
+        >
+
+        <input
+            type="text"
+            name="course"
+            value="<%= student.course %>"
+            placeholder="Course"
+            required
+        >
+
+        <input
+            type="text"
+            name="phone"
+            value="<%= student.phone %>"
+            placeholder="Phone"
+            required
+        >
+
+        <button type="submit">
+            Update Student
+        </button>
+
+        <a href="/students" class="back-btn">
+            Back
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

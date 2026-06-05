@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="student-container">
+
+        <div class="header">
+            <h1 class="center">Students List</h1>
+
+            <div class="center">
+                <a href="/add-student" class="add-btn">
+                    + Add Student
+                </a>
+            </div>
+        </div>
+
+        <div class="cards">
+
+            <% students.forEach(student=> { %>
+
+                <div class="student-card">
+
+                    <div class="card-top">
+
+                        <div class="avatar">
+                            <%= student.name.charAt(0).toUpperCase() %>
+                        </div>
+
+                        <div class="user-details">
+                            <h3>
+                                <%= student.name %>
+                            </h3>
+                            <span>Student Profile</span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="info">
+                            <span>Email</span>
+                            <p>
+                                <%= student.email %>
+                            </p>
+                        </div>
+
+                        <div class="info">
+                            <span>Course</span>
+                            <p>
+                                <%= student.course %>
+                            </p>
+                        </div>
+
+                        <div class="info">
+                            <span>Phone</span>
+                            <p>
+                                <%= student.phone %>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="actions mt-30">
+
+
+                        <a href="/edit/<%= student.id %>" class="edit-btn m-3">
+                            Edit
+                        </a>
+
+                        <a href="/delete/<%= student.id %>" class="delete-btn m-3">
+                            Delete
+                        </a>
+
+                        <a href="/view/<%= student.id %>" class="view-btn">
+                            View
+                        </a>
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+
+    <link rel="stylesheet" href="/css/view.css">
+</head>
+<body>
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="card-banner"></div>
+
+        <div class="profile-avatar">
+            <%= student.name.charAt(0).toUpperCase() %>
+        </div>
+
+        <div class="profile-header">
+            <h1><%= student.name %></h1>
+            <p class=""> Student Profile</p>
+        </div>
+
+        <div class="profile-info">
+
+            <div class="info-item">
+                <span>Email</span>
+                <h4><%= student.email %></h4>
+            </div>
+
+            <div class="info-item">
+                <span>Course</span>
+                <h4><%= student.course %></h4>
+            </div>
+
+            <div class="info-item">
+                <span>Phone</span>
+                <h4><%= student.phone %></h4>
+            </div>
+
+            <div class="info-item">
+                <span>Student ID</span>
+                <h4><%= student.id %></h4>
+            </div>
+
+        </div>
+
+        <div class="profile-actions">
+
+            <a href="/students" class="back-btn">
+                Back
+            </a>
+
+            <a href="/edit/<%= student.id %>" class="edit-btn">
+                Edit
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
