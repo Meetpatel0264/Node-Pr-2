@@ -8,7 +8,7 @@
 
 <div class="form-container">
 
-    <form action="/update/<%= student.id %>" method="POST">
+    <form action="/update/<%= student.id %>" method="POST" onsubmit="return confirmUpdate()">
 
         <h2>Edit Student</h2>
 
@@ -55,6 +55,14 @@
     </form>
 
 </div>
+
+<script>
+    function confirmUpdate() {
+        return confirm(
+            "Are you sure you want to update this student?"
+        );
+    }
+</script>
 
 </body>
 </html>

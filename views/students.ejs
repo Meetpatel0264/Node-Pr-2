@@ -25,73 +25,92 @@
 
         <div class="cards">
 
-            <% students.forEach(student=> { %>
+            <% if(students.length> 0) { %>
 
-                <div class="student-card">
+                <% students.forEach(student=> { %>
 
-                    <div class="card-top">
+                    <div class="student-card">
 
-                        <div class="avatar">
-                            <%= student.name.charAt(0).toUpperCase() %>
+                        <div class="card-top">
+
+                            <div class="avatar">
+                                <%= student.name.charAt(0).toUpperCase() %>
+                            </div>
+
+                            <div class="user-details">
+                                <h3>
+                                    <%= student.name %>
+                                </h3>
+                                <span>Student Profile</span>
+                            </div>
+
                         </div>
 
-                        <div class="user-details">
-                            <h3>
-                                <%= student.name %>
-                            </h3>
-                            <span>Student Profile</span>
+                        <div class="card-body">
+
+                            <div class="info">
+                                <span>Email</span>
+                                <p>
+                                    <%= student.email %>
+                                </p>
+                            </div>
+
+                            <div class="info">
+                                <span>Course</span>
+                                <p>
+                                    <%= student.course %>
+                                </p>
+                            </div>
+
+                            <div class="info">
+                                <span>Phone</span>
+                                <p>
+                                    <%= student.phone %>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="actions mt-30">
+
+                            <a href="/edit/<%= student.id %>" class="edit-btn m-3">
+                                Edit
+                            </a>
+
+                            <a href="/delete/<%= student.id %>" class="delete-btn m-3" onclick="return confirmDelete()">
+                                Delete
+                            </a>
+
+                            <a href="/view/<%= student.id %>" class="view-btn">
+                                View
+                            </a>
+
                         </div>
 
                     </div>
 
-                    <div class="card-body">
+                    <% }) %>
 
-                        <div class="info">
-                            <span>Email</span>
-                            <p>
-                                <%= student.email %>
-                            </p>
-                        </div>
+                        <% } else { %>
 
-                        <div class="info">
-                            <span>Course</span>
-                            <p>
-                                <%= student.course %>
-                            </p>
-                        </div>
+                            <div class="no-data">
+                                <h2>No Student Data Found</h2>
+                                <p>Add your first student to get started.</p>
+                            </div>
 
-                        <div class="info">
-                            <span>Phone</span>
-                            <p>
-                                <%= student.phone %>
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="actions mt-30">
-
-
-                        <a href="/edit/<%= student.id %>" class="edit-btn m-3">
-                            Edit
-                        </a>
-
-                        <a href="/delete/<%= student.id %>" class="delete-btn m-3">
-                            Delete
-                        </a>
-
-                        <a href="/view/<%= student.id %>" class="view-btn">
-                            View
-                        </a>
-                    </div>
-
-                </div>
-
-                <% }) %>
+                            <% } %>
 
         </div>
 
     </div>
+
+    <script>
+        function confirmDelete() {
+            return confirm(
+                "Are you sure you want to delete this student?"
+            );
+        }
+    </script>
 
 </body>
 

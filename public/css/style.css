@@ -269,3 +269,37 @@ button{
     border-radius:10px;
     text-decoration:none;
 }
+
+.no-data{
+    min-height:30vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.no-data h2{
+    font-size:32px;
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.no-data p{
+    color:#64748b;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+.no-data .add-btn{
+    padding:12px 25px;
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+}

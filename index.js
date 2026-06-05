@@ -11,17 +11,14 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Home Page
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-// Add Student Page
 app.get("/add-student", (req, res) => {
   res.render("addStudent");
 });
 
-// Save Student
 app.post("/save-student", (req, res) => {
 
   const student = {
@@ -37,12 +34,10 @@ app.post("/save-student", (req, res) => {
   res.redirect("/students");
 });
 
-// Students List
 app.get("/students", (req, res) => {
   res.render("students", { students });
 });
 
-// Delete Student
 app.get("/delete/:id", (req, res) => {
 
   const id = Number(req.params.id);
@@ -52,7 +47,6 @@ app.get("/delete/:id", (req, res) => {
   res.redirect("/students");
 });
 
-// Edit Student Page
 app.get("/edit/:id", (req, res) => {
 
   const id = Number(req.params.id);
@@ -71,7 +65,6 @@ app.get("/view/:id", (req, res) => {
     res.render("viewStudent", { student });
 });
 
-// Update Student
 app.post("/update/:id", (req, res) => {
 
   const id = Number(req.params.id);
