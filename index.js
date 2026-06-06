@@ -9,7 +9,7 @@ let students = [];
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded());
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -56,15 +56,6 @@ app.get("/edit/:id", (req, res) => {
   res.render("editStudent", { student });
 });
 
-app.get("/view/:id", (req, res) => {
-
-    const id = Number(req.params.id);
-
-    const student = students.find(student => student.id === id);
-
-    res.render("viewStudent", { student });
-});
-
 app.post("/update/:id", (req, res) => {
 
   const id = Number(req.params.id);
@@ -85,6 +76,16 @@ app.post("/update/:id", (req, res) => {
   });
 
   res.redirect("/students");
+});
+
+
+app.get("/view/:id", (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const student = students.find(student => student.id === id);
+
+    res.render("viewStudent", { student });
 });
 
 app.listen(PORT, () => {
